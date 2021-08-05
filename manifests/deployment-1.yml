@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azurekubernetesservice-3399"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azurekubernetesservice-3399"
+  template:
+    metadata:
+      labels:
+        app: "azurekubernetesservice-3399"
+    spec:
+      containers:
+        - name: "azurekubernetesservice-3399"
+          image: "seazureprd095mlacrwus.azurecr.io/azurekubernetesservice"
+          ports:
+          - containerPort: 8080
